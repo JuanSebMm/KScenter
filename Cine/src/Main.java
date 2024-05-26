@@ -2,14 +2,24 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Definir las dimensiones del arreglo
+        int filas = 5;
+        int columnas = 5;
+        String[][] matriz = new String[filas][columnas];
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Llenar el arreglo dinámicamente
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                matriz[i][j] = (char)('A' + j) + Integer.toString(i + 1);
+            }
+        }
+
+        // Imprimir el arreglo en el formato solicitado
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println(); // Nueva línea después de cada fila
         }
     }
 }
